@@ -1,0 +1,1 @@
+export type TimerStatuses = 'break' | 'running' | 'stopped' | 'pending';

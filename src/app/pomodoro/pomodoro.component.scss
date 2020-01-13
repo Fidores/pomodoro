@@ -1,0 +1,104 @@
+@import '../sass/variables.scss';
+
+$mainClass: pomodoro;
+
+.#{$mainClass} {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    grid-template-rows: calc(100vh - (60px + #{$header-height})) 60px;
+    grid-template-areas: 
+        'timer actions'
+        'info info'
+    ;
+    place-items: center;
+
+    &__timer {
+        position: relative;
+        grid-area: timer;
+        width: 100%;
+        padding: 0px 20px 0px 20px;
+    }
+
+    &__time-left {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 7rem;
+        text-align: center;
+    }
+
+    &__actions {
+        width: 100%;
+        padding: 0px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        grid-area: actions;
+    }
+
+    &__action {
+        cursor: pointer;
+        transition: transform .2s ease;
+        background-color: transparent;
+        border: none;
+        color: #FFF;
+        outline: none;
+
+        &--timer-control {
+            background-color: #d32f2e;
+            border-radius: 100%;
+            height: 80px;
+            width: 80px;
+            display: grid;
+            place-items: center;
+            font-size: 1.2rem;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+
+    &__break-info {
+        color: #bcbcbc;
+        width: 100%;
+        text-align: center;
+        grid-area: info;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .#{$mainClass}  {
+        &__time-left {
+            font-size: 5rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .#{$mainClass}  {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 60px;
+        grid-template-areas:
+            'timer'
+            'actions'
+            'info'
+        ;
+
+        &__timer {
+            width: 70%;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .#{$mainClass}  {
+        &__timer {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+.settings {
+    width: 60%;
+    margin: 50px auto 0px auto;
+    // background-color: green;
+
+    &__save {
+        display: block;
+        margin: 20px auto;
+        border: none;
+        outline: none;
+        background-color: #d32f2e;
+        color: #FFF;
+        padding: 10px 15px;
+        border-radius: 3px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: transform .1s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }        
+    }
+
+    &__properties {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+
+    &__property {
+        margin-top: 20px;
+        height: 100px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr;
+        row-gap: 20px;
+    }
+
+    &__value {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: rgb(255, 192, 203);
+        border-bottom: 2px solid rgb(255, 192, 203);
+        font-size: 1.5rem;
+        text-align: center;
+        width: 100%;
+    }
+}

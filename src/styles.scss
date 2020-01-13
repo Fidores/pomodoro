@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import './app/sass/variables.scss';
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #303030;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*::after, *::before {
+    box-sizing: inherit;
+}
+
+a:link, a:visited, a {
+    color: #FFF;
+    text-decoration: none;
+}

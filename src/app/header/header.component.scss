@@ -1,0 +1,26 @@
+@import '../sass/variables.scss';
+
+.main-header {
+	position: sticky;
+	top: 1px;
+	z-index: 999;
+	height: $header-height;
+	display: grid;
+	grid-template-columns: 5fr auto 1fr;
+	align-items: center;
+
+	&__section:nth-child(3) {
+		justify-self: end;
+	}
+
+	&__item {
+		margin: 0px 30px;
+		cursor: pointer;
+
+		&--logo {
+			font-weight: bold;
+			font-size: 1.3rem;
+			cursor: auto;
+		}
+	}
+}

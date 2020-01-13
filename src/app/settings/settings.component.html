@@ -1,0 +1,31 @@
+<form class="settings" *ngIf="settings">
+
+  <div class="settings__properties">
+    <div class="settings__property">
+
+      <label for="studyingDuration" class="settings__title">Czas trwania sesji nauki</label>
+      <input type="text" class="settings__value" name="studyingDuration" id="studyingDuration"
+        [(ngModel)]="settings.sessionsConfig.studyingSessionDuration">
+
+    </div>
+
+    <div class="settings__property">
+
+      <label for="shortBreakDuration" class="settings__title">Czas trwania krótkiej przerwy</label>
+      <input type="text" class="settings__value" name="shortBreakDuration" id="shortBreakDuration"
+        [(ngModel)]="settings.sessionsConfig.shortBreakDuration">
+
+    </div>
+
+    <div class="settings__property">
+
+      <label for="longBreakDuration" class="settings__title">Czas trwania długiej przerwy</label>
+      <input type="text" class="settings__value" name="longBreakDuration" id="longBreakDuration"
+        [(ngModel)]="settings.sessionsConfig.longBreakDuration">
+
+    </div>
+  </div>
+
+  <button class="settings__save" type="button" (click)="updateSettings()">Zapisz</button>
+
+</form>
