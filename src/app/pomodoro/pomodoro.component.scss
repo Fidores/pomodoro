@@ -7,7 +7,7 @@ $mainClass: pomodoro;
     grid-template-columns: 5fr 7fr;
     grid-template-rows: calc(100vh - (60px + #{$header-height})) 60px;
     grid-template-areas: 
-        'timer actions'
+        'timer control-panel'
         'info info'
     ;
     place-items: center;
@@ -27,13 +27,20 @@ $mainClass: pomodoro;
         text-align: center;
     }
 
+    &__control-panel {
+        width: 100%;
+        grid-area: control-panel;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 50px;
+    }
+
     &__actions {
         width: 100%;
         padding: 0px 20px;
         display: flex;
         align-items: center;
         justify-content: space-around;
-        grid-area: actions;
     }
 
     &__action {
@@ -73,6 +80,7 @@ $mainClass: pomodoro;
 
 @media (max-width: 1024px) and (min-width: 769px) {
     .#{$mainClass}  {
+        grid-template-rows: 70vh 60px;
         &__time-left {
             font-size: 5rem;
         }

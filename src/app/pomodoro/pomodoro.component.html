@@ -16,43 +16,54 @@
 
     </div>
 
-    <div class="pomodoro__actions">
+    <div class="pomodoro__control-panel">
 
-        <button [ngStyle]="{'background-color': statuses[status].color}" class="pomodoro__action pomodoro__action--timer-control" *ngIf="isStopped; else isRunning" (click)="startStudying()">
-
-            <fa-icon [icon]="faPlay" size="2x"></fa-icon>
-
-        </button>
-
-        <ng-template #isRunning>
-
-            <button [ngStyle]="{'background-color': statuses[status].color}" class="pomodoro__action pomodoro__action--timer-control" (click)="pause()">
-    
-                <fa-icon [icon]="faPause" size="2x"></fa-icon>
-    
+        <div class="pomodoro__actions">
+        
+            <button [ngStyle]="{'background-color': statuses[status].color}"
+                class="pomodoro__action pomodoro__action--timer-control" *ngIf="isStopped; else isRunning"
+                (click)="startStudying()">
+        
+                <fa-icon [icon]="faPlay" size="2x"></fa-icon>
+        
             </button>
-
-        </ng-template>
-
-
-        <button class="pomodoro__action" (click)="reset()">
-
-            <fa-icon [icon]="faStop" size="2x"></fa-icon>
-
-        </button>
-
-    </div>
-
-    <div class="pomodoro__break-info" *ngIf="sessionsLeftToLongerBreak > 0; else longerBreakInfo">
-        <p>Do następnej długiej przerwy zostały {{ sessionsLeftToLongerBreak }} sesje</p>
-    </div>
-
-    <ng-template #longerBreakInfo>
-
-        <div class="pomodoro__break-info">
-            <p>Następna przerwa będzie dłuższa</p>
+        
+            <ng-template #isRunning>
+        
+                <button [ngStyle]="{'background-color': statuses[status].color}"
+                    class="pomodoro__action pomodoro__action--timer-control" (click)="pause()">
+        
+                    <fa-icon [icon]="faPause" size="2x"></fa-icon>
+        
+                </button>
+        
+            </ng-template>
+        
+        
+            <button class="pomodoro__action" (click)="reset()">
+        
+                <fa-icon [icon]="faStop" size="2x"></fa-icon>
+        
+            </button>
+        
         </div>
 
-    </ng-template>
+        <div class="pomodoro__info">
+
+            <div class="pomodoro__break-info" *ngIf="sessionsLeftToLongerBreak > 0; else longerBreakInfo">
+                <p>Do następnej długiej przerwy zostały {{ sessionsLeftToLongerBreak }} sesje</p>
+            </div>
+            
+            <ng-template #longerBreakInfo>
+            
+                <div class="pomodoro__break-info">
+                    <p>Następna przerwa będzie dłuższa</p>
+                </div>
+            
+            </ng-template>
+
+        </div>
+
+    </div>
 
 </div>
